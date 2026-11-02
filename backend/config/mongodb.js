@@ -1,7 +1,10 @@
 import mongoose from 'mongoose'
 
 export const connectDB = async () => {
-    await mongoose.connect('mongodb+srv://sahil190105:190105@cluster0.l2cgbdz.mongodb.net/tomato').then(() => {
-        console.log("DB Connected!");
-    });
+    try {
+        await mongoose.connect(process.env.MONGODB_URL);
+        console.log("DB Connected");
+    } catch (error) {
+        console.log(error);
+    } 
 }
