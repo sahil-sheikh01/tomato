@@ -1,0 +1,64 @@
+.orders{
+    width: 70%;
+    margin-top: 50px;
+    margin-left: max(5vw, 25px);
+    color: #6d6d6d;
+    font-size: 16px;
+}
+
+.order{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+    align-items: start;
+    gap: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #505050;
+}
+
+.order-items{
+    font-weight: 500;
+}
+
+.customer-name{
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.customer-address{
+    margin-bottom: 10px;
+}
+
+.order select{
+    background-color: #ffe8e4;
+    border: 1px solid tomato;
+    border-radius: 4px;
+    width: max(10vw, 120px);
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px){
+    .order{
+        font-size: 12px;
+        grid-template-columns: 0.5fr 2fr 1fr;
+        padding: 15px 8px;
+        position: relative;
+    }
+    .order select{
+        padding: 5px;
+        font-size: 12px;
+    }
+    .order img{
+        width: 40px;
+    }
+    .order select{
+        right: 10px;
+        bottom: 10px;
+        position: absolute;
+    }
+}

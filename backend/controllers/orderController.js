@@ -4,7 +4,6 @@ import Stripe from "stripe"
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-// For place order
 const placeOrder = async (req, res) => {
 
     const frontend_url = "http://localhost:5173";
@@ -90,4 +89,36 @@ const verifyOrder = async (req, res) => {
     }
 }
 
-export { placeOrder, verifyOrder }
+const userOrders = async (req, res) => {
+    try {
+        const orders = await orderModel.find({userId: req.userId});
+        res.json({
+            success: true,
+            data: orders
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success: false,
+            message: "Error!"
+        });
+    }
+}
+
+const listOrders = async (req, res) => {
+    try {
+        const orders = await orderModel.find({});
+        res.json({
+            success: true,
+            data: orders
+        });
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success: false,
+            message: "Error!"
+        });
+    }
+}
+
+export { placeOrder, verifyOrder, userOrders, listOrders }
