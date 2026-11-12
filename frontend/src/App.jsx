@@ -8,6 +8,7 @@ import Login from "./components/Login/Login"
 import { useState } from "react"
 import { ToastContainer } from "react-toastify"
 import Verify from "./pages/Verify/Verify"
+import MyOrders from "./pages/MyOrders/MyOrders"
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/verify" element={<Verify />} />
+          <Route path="/my-orders" element={<MyOrders />} />
         </Routes>
       </div>
       <Footer />
