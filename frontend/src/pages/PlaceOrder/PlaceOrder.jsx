@@ -1,9 +1,10 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
 import { useState } from 'react';
 import axios from "axios";
 import { toast } from "react-toastify"
+import { useNavigate } from 'react-router-dom'
 
 const PlaceOrder = () => {
 
@@ -56,6 +57,19 @@ const PlaceOrder = () => {
       toast.error("Error!");
     }
   }
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token) {
+      navigate('/cart');
+      toast.error("Please login to continue!");
+    }
+    else if (getCartTotal() === 0) {
+      navigate('/cart');
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token])
 
   return (
     <form onSubmit={placeOrder} className='place-order'>
