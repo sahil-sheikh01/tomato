@@ -6,6 +6,11 @@
     font-size: 16px;
 }
 
+.order-list{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .order{
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
