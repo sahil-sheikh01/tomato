@@ -3,13 +3,13 @@ import cors from 'cors'
 import { connectDB } from './config/mongodb.js';
 import foodRouter from './routes/foodRoute.js';
 import userRouter from './routes/userRoute.js';
-import 'dotenv/config.js'
+import 'dotenv/config'
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 
 // Configuration
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 // Middlewares
 app.use(express.json());
