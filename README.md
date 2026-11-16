@@ -1,5 +1,7 @@
 # Tomato 🍅
 
+<img width="1280" height="720" alt="thumbnail" src="https://github.com/user-attachments/assets/846a1cbf-6c16-444d-92f8-8ebf28228dee" />
+
 A modern food delivery website built with the **MERN stack**, featuring a user-friendly interface, seamless cart management, and a smooth ordering experience.
 
 ## 🛠️ Tech Stack
